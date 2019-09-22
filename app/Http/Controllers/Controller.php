@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-namespace App\Http\functions1;
-namespace App\Http\functions2;
+
 
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;

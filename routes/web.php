@@ -16,24 +16,26 @@ Route::get('/', function () {
    
 });
 
-Route::get('/about', function () {
-    return "Hi about page";
-   
-});
+Route::get('/post','PostsController@index');
 
-Route::get('/contact', function () {
-    return "hi contact page";
+// Route::get('/about', function () {
+//     return "Hi about page";
    
-});
+// });
 
-Route::get('/post/{id}/{name}', function ($id,$name) {
-    return "this is post number " . $id . " ". $name;
+// Route::get('/contact', function () {
+//     return "hi contact page";
    
-});
+// });
 
-Route::get('admin/posts/example',array('as'=>'admin.home' ,function () {
-    $url=route('admin.home');
-    return "this url is".$url;
+// Route::get('/post/{id}/{name}', function ($id,$name) {
+//     return "this is post number " . $id . " ". $name;
    
-}));
+// });
+
+// Route::get('admin/posts/example',array('as'=>'admin.home' ,function () {
+//     $url=route('admin.home');
+//     return "this url is".$url;
+   
+// }));
 
