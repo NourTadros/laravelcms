@@ -18,11 +18,27 @@ class PostsController extends Controller
     public function create(){
         return "I am the method that creates stuff";
     }
-    public function delete(){
+    public function destroy($id){
 
     }
    
     public function edit($id){
 
     }
+    public function update(Request $request,$id){
+
+    }
+
+
+public function contact(){
+    return view('contact');
+}
+public function show_post($id,$name,$password){
+
+    // return view('post')->with('id',$id);
+    return view('post',compact('id','name','password'));
+
+}
+
+
 }
