@@ -16,7 +16,10 @@ Route::get('/', function () {
    
 });
 
-Route::get('/post','PostsController@index');
+// Route::get('/post/{id}','PostsController@index');
+Route::resource('posts','PostsController');
+
+
 
 // Route::get('/about', function () {
 //     return "Hi about page";
