@@ -1,34 +1,28 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layout.app')
 
-        <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
-        <!-- Styles -->
-    
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+@section('content')
+<h1>Contact Page</h1>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
-           <h1> Contact Page</h1>
-        </div>
-    </body>
-</html>
+@if (count($people))
+<ul>
+
+@foreach($people as $person)
+
+<li>{{$person}}</li>
+
+
+@endforeach
+</ul>
+
+@endif
+
+@stop
+
+@section('footer')
+
+<!-- <script>alert('Hello visitor')</script> -->
+
+@stop
