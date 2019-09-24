@@ -24,3 +24,5 @@ Route::get('post/{id}/{name}/{password}','PostsController@show_post');
 
 
 
+
+

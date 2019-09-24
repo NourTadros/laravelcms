@@ -28,7 +28,7 @@
                 </div>
             @endif
 
-           <h1> Post Page {{$id}}{{$name}}{{$password}}</h1>
+           <h1> Post Page {{$id}} {{$name}} {{$password}}</h1>
         </div>
     </body>
 </html>
