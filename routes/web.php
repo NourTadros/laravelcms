@@ -109,7 +109,24 @@ Route::get('/insert',function(){
 //     Post::create(['title'=>'the create method', 'content'=>'Wow i\'m learning a lot with laravel']);
 // });
 
-Route::get('/update',function(){
+// Route::get('/update',function(){
 
-    Post::where('id',2)->where('is_admin',0)->update(['title'=>'NEW PHP title','content'=>'ana gamda gidan']);
-});
+//     Post::where('id',2)->where('is_admin',0)->update(['title'=>'NEW PHP title','content'=>'ana gamda gidan']);
+// });
+
+// Route::get('/delete',function(){
+// Post::where('id',3)->delete();
+// });
+
+// Route::get('/deleteedwin',function(){
+//     $post=Post::find(2);
+//     $post->delete();
+// });
+
+// Route::get('/delete3',function(){
+//         Post::destroy(2);
+//     });
+
+// Route::get('/deletemultiple',function(){
+//     Post::destroy([4,5]);
+// });
