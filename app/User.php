@@ -28,6 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function post(){
+        
+        return $this->hasOne('App\Post');
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
