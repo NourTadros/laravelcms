@@ -90,16 +90,16 @@ Route::get('/insert',function(){
 
 // });
 
-// Route::get('/basicinsert',function(){
-// $post= new Post;
-// $post->title='new ORM title';
-// $post->content='Wooooowww Eloquent is really COOL';
-// $post->save();
-// });
+Route::get('/basicinsert',function(){
+$post= new Post;
+$post->title='Coldplay';
+$post->content='Adventure of a lifetime';
+$post->save();
+});
 
 
 // Route::get('/basicinsert',function(){
-//     $post= Post::find(2);
+//     $post= Post::find(6);
 //     $post->title='new eloquent title insert 2';
 //     $post->content='Wooooowww Eloquent is really COOL';
 //     $post->save();
@@ -130,3 +130,26 @@ Route::get('/insert',function(){
 // Route::get('/deletemultiple',function(){
 //     Post::destroy([4,5]);
 // });
+
+Route::get('/softdelete',function(){
+Post::find(11)->delete();
+});
+
+// Route::get('/readsoftdelete',function(){
+// $post=Post::find(6);
+// return $post;
+// $post=Post::withTrashed()->where('id',6)->get();
+// return $post;
+
+// $post=Post::onlyTrashed()->where('is_admin',0)->get();
+// return $post;
+// });
+
+// Route::get('/restore',function(){
+// Post::withTrashed()->where('is_admin',0)->restore();
+// });
+
+Route::get('/forcedelete',function(){
+
+    Post::onlyTrashed()->where('is_admin',0)->forceDelete();
+});
