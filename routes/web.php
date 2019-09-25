@@ -105,6 +105,11 @@ Route::get('/insert',function(){
 //     $post->save();
 //     });
 
-Route::get('/create',function(){
-    Post::create(['title'=>'the create method', 'content'=>'Wow i\'m learning a lot with laravel']);
+// Route::get('/create',function(){
+//     Post::create(['title'=>'the create method', 'content'=>'Wow i\'m learning a lot with laravel']);
+// });
+
+Route::get('/update',function(){
+
+    Post::where('id',2)->where('is_admin',0)->update(['title'=>'NEW PHP title','content'=>'ana gamda gidan']);
 });
