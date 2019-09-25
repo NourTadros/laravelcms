@@ -73,11 +73,38 @@ Route::get('/insert',function(){
 // });
 
 
-Route::get('/search',function(){
-    $posts=Post::where('id',2)->orderBy('id','asc')->take(1)->get();
-    return $posts;
+// Route::get('/search',function(){
+//     $posts=Post::where('id',2)->orderBy('id','asc')->take(1)->get();
+//     return $posts;
+// });
+
+
+
+
+// Route::get('/findmore',function(){
+
+// // $posts=Post::findOrFail(2);
+// $posts=Post::where('users_count','<',50)->firstOrFail();
+
+// return $posts;
+
+// });
+
+// Route::get('/basicinsert',function(){
+// $post= new Post;
+// $post->title='new ORM title';
+// $post->content='Wooooowww Eloquent is really COOL';
+// $post->save();
+// });
+
+
+// Route::get('/basicinsert',function(){
+//     $post= Post::find(2);
+//     $post->title='new eloquent title insert 2';
+//     $post->content='Wooooowww Eloquent is really COOL';
+//     $post->save();
+//     });
+
+Route::get('/create',function(){
+    Post::create(['title'=>'the create method', 'content'=>'Wow i\'m learning a lot with laravel']);
 });
-
-
-
-
