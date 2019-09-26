@@ -36,6 +36,12 @@ class User extends Authenticatable
 
         return $this->hasMany('App\Post');
     }
+    public function roles(){
+        return $this->belongsToMany('App\Role')->withPivot('created_at');
+
+        // return $this->belongsToMany('App\Role','user_role','user_id','role_id');
+
+    }
     /**
      * The attributes that should be cast to native types.
      *

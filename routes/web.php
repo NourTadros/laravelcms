@@ -177,3 +177,36 @@ foreach($user->posts as $post){
 
 }
 });
+
+
+//Many to many
+
+// Route::get('/user/{id}/role',function($id){
+
+//     $user=User::find($id)->roles()->orderBy('id','desc')->get();
+//     return $user;
+
+    // foreach($user->roles as $role){
+    //     return $role->name;
+    // }
+
+
+
+// });
+
+//Accessing pivot table
+
+Route::get('user/pivot',function(){
+
+    $user=User::find(1);
+
+    foreach($user->roles as $role){
+        return $role->pivot->created_at;
+    }
+});
+
+Route::get('/user/country',function(){
+
+});
+
+
