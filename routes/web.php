@@ -1,6 +1,7 @@
 <?php
 use App\Post;
 use App\User;
+use App\Country;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -196,17 +197,22 @@ foreach($user->posts as $post){
 
 //Accessing pivot table
 
-Route::get('user/pivot',function(){
+// Route::get('user/pivot',function(){
 
-    $user=User::find(1);
+//     $user=User::find(1); 
 
-    foreach($user->roles as $role){
-        return $role->pivot->created_at;
-    }
-});
+//     foreach($user->roles as $role){
+//         return $role->pivot->created_at;
+//     }
+// });
 
-Route::get('/user/country',function(){
+// Route::get('/user/country',function(){
+// $country=Country::find(6);
+// foreach ($country->posts as $post){
+//     return $post->title;
+// }
+// });
 
-});
+
 
 
