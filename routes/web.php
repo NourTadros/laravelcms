@@ -15,22 +15,24 @@ use App\Tag;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
    
-});
+// });
+
 
 // Route::get('/post/{id}','PostsController@index');
 // Route::resource('posts','PostsController');
 
-Route::get('/contact','PostsController@contact');
+// Route::get('/contact','PostsController@contact');
+
 // Route::get('post/{id}/{name}/{password}','PostsController@show_post');
 
 
 //INSERT RAW SQL QUERIES
-Route::get('/insert',function(){
-    DB::insert('insert into posts(title,content) values(?,?)',['PHP with laravel','PHP Laravel is the best thing with stomach ache']);
-});
+// Route::get('/insert',function(){
+//     DB::insert('insert into posts(title,content) values(?,?)',['PHP with laravel','PHP Laravel is the best thing with stomach ache']);
+// });
 
 
 // Route::get('/read',function(){
@@ -93,12 +95,12 @@ Route::get('/insert',function(){
 
 // });
 
-Route::get('/basicinsert',function(){
-$post= new Post;
-$post->title='Coldplay';
-$post->content='Adventure of a lifetime';
-$post->save();
-});
+// Route::get('/basicinsert',function(){
+// $post= new Post;
+// $post->title='Coldplay';
+// $post->content='Adventure of a lifetime';
+// $post->save();
+// });
 
 
 // Route::get('/basicinsert',function(){
@@ -134,9 +136,9 @@ $post->save();
 //     Post::destroy([4,5]);
 // });
 
-Route::get('/softdelete',function(){
-Post::find(11)->delete();
-});
+// Route::get('/softdelete',function(){
+// Post::find(11)->delete();
+// });
 
 // Route::get('/readsoftdelete',function(){
 // $post=Post::find(6);
@@ -161,25 +163,25 @@ Post::find(11)->delete();
 
 /////one to one relationship/////
 
-Route::get('/user/{id}/post',function($id){
-    return User::find($id)->post->title;
+// Route::get('/user/{id}/post',function($id){
+//     return User::find($id)->post->title;
 
 
 
-});
+// });
 
-Route::get('/post/{id}/user',function($id){
-return Post::find($id)->user->name;
-});
+// Route::get('/post/{id}/user',function($id){
+// return Post::find($id)->user->name;
+// });
 
-Route::get('/posts',function(){
-$user=User::find(1);
-foreach($user->posts as $post){
+// Route::get('/posts',function(){
+// $user=User::find(1);
+// foreach($user->posts as $post){
 
-    echo $post->title."<br>";
+//     echo $post->title."<br>";
 
-}
-});
+// }
+// });
 
 
 //Many to many
@@ -254,13 +256,19 @@ foreach($user->posts as $post){
 // }
 // });
 
-Route::get('/tag/post', function(){
-  $tag=Tag::find(2);
+// Route::get('/tag/post', function(){
+//   $tag=Tag::find(2);
 
-  foreach($tag->posts as $post){
-      return $post->title;
-  }
-});
+//   foreach($tag->posts as $post){
+//       return $post->title;
+//   }
+// });
 
 
+/*
+--------------------------------------
+Crud Application
+--------------------------------------
+*/
 
+Route::resource('/posts','PostsController');
