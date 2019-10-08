@@ -15,10 +15,10 @@ use App\Tag;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
    
-// });
+});
 
 
 // Route::get('/post/{id}','PostsController@index');
