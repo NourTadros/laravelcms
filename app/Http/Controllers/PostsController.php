@@ -23,16 +23,23 @@ class PostsController extends Controller
         return view('post.create');
     }
     public function destroy($id){
-
+        $post=Post::whereId($id)->delete();
+        // $post->delete();
+        return redirect('/posts');
     }
    
     public function edit($id){
         $post=Post::findOrFail($id);
-        return view('posts.edit',compact('post'));
+        return view('post.edit',compact('post'));
 
     }
     public function update(Request $request,$id){
 
+        $post=Post::findOrFail($id);
+
+        $post->update($request->all());
+
+        return redirect('/posts');
     }
 
 
