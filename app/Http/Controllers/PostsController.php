@@ -60,15 +60,25 @@ public function show_post($id,$name,$password){
     public function store(CreatePostRequest $request){
 
 
-$file=$request->file('file');
+        $input=$request->all();
+        if($file = $request->file('file')){
+            $name=$file->getClientOriginalName();
+            $file->move('images',$name);
+            $input['path']=$name;
 
-echo "<br>";
 
-echo $file->getClientOriginalName();
+        }
+Post::create($input);
 
-echo "<br>";
+// $file=$request->file('file');
 
-echo $file->getClientSize();
+// echo "<br>";
+
+// echo $file->getClientOriginalName();
+
+// echo "<br>";
+
+// echo $file->getClientSize();
 
 
 
