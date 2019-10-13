@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
+    public $directory="public/images/";
     use SoftDeletes;
     //
     protected $fillable = ['title','content','path'];
@@ -28,6 +29,12 @@ public static function scopeLatest($query){
 
     return $query->orderBy('id','asc')->get();
     
+}
+
+public function getPathAttribute($value){
+
+
+return $this->directory.$value;
 }
 
 }
