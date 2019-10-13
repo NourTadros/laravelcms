@@ -57,7 +57,20 @@ public function show_post($id,$name,$password){
     return view('post',compact('id','name','password'));
 
 }
-public function store(CreatePostRequest $request){
+    public function store(CreatePostRequest $request){
+
+
+$file=$request->file('file');
+
+echo "<br>";
+
+echo $file->getClientOriginalName();
+
+echo "<br>";
+
+echo $file->getClientSize();
+
+
 
 // $this->validate($request,[
 
@@ -68,8 +81,9 @@ public function store(CreatePostRequest $request){
 
 
     // return $request->all();
-    Post::create($request->all());
-    return redirect('/posts');
+
+    // Post::create($request->all());
+    // return redirect('/posts');
 
     // $input=$request->all();
     // $input['title']=$request->title;
