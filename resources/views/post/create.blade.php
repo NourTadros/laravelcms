@@ -5,11 +5,23 @@
 @section('content')
 
 <h1>Create Post</h1>
-    {!! Form::open(['method'=>'POST','action'=>'PostsController@store']) !!}
+    {!! Form::open(['method'=>'POST','action'=>'PostsController@store','files'=>true]) !!}
+
+    
+
+
     <div class="form-group">
 
         {!! Form::label('title', 'Title:') !!}
         {!! Form::text('title', null, ['class'=>'form-control']) !!}
+
+
+    </div>
+
+    <div class="form-group">
+
+        
+        {!! Form::file('file',  ['class'=>'form-control']) !!}
 
 
     </div>
