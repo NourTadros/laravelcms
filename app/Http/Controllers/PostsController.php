@@ -11,7 +11,7 @@ class PostsController extends Controller
 {
     public function index(){
 
-        $posts=Post::orderBy('id','asc')->get();
+        $posts=Post::latest()->get();
         return view('post.index',compact('posts'));
     }
     //
