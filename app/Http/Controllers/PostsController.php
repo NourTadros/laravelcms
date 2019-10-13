@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Http\Requests\CreatePostRequest;
+
 
 class PostsController extends Controller
 {
@@ -55,8 +57,14 @@ public function show_post($id,$name,$password){
     return view('post',compact('id','name','password'));
 
 }
-public function store(Request $request){
+public function store(CreatePostRequest $request){
 
+// $this->validate($request,[
+
+// 'title'=>'required'
+// 'content'=>'required'
+
+// ]);
 
 
     // return $request->all();

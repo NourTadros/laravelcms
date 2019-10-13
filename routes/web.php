@@ -294,3 +294,5 @@ echo Carbon::now()->yesterday()->diffForHumans();
 echo '<br>';
 
 });
+
+
